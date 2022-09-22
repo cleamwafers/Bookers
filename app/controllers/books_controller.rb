@@ -9,7 +9,7 @@ class BooksController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     book.save
     # 4. トップ画面へリダイレクト
-    redirect_to '/top'
+    redirect_to book_path(book.id)
   end
 
   def index
@@ -17,6 +17,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find(params[:id])
   end
 
   def edit

@@ -3,5 +3,5 @@
 
 <h2>Body</h2>
 <p><%= @book.body %></p>
-<%= link_to "編集", edit_book_path(@book.id) %>
-<%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to "Edit", edit_book_path(@book.id) %>
+<a  href="/books">Back</a>

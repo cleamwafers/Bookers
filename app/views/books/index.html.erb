@@ -12,6 +12,9 @@
  <tbody>
   <% @books.each do |book| %>
  </tbody>
+ <a href="/books/1">show</a>
+ <a href="books/1/edit">Edit</a>
+ <a data-confirm="destroy_list_path(@book.id)), method: :delete, "data-confirm" => "Are you sure？" %">Destroy</a>
 </table>
   <span>
     <%= link_to book.title, book_path(book.id) %>

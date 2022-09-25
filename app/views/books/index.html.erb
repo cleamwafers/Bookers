@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
  <head>
-     <title>WebvampBackendNew</title>
+     <title>WebcampBackendNew</title>
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
  </head>
  <body>
   <p id="notice"></p>
@@ -15,11 +22,19 @@
      </tr>
    </thead>
    <tbody>
+    <tr>
+     <td>
     <% @books.each do |book| %>
-   </tbody>
-   <a href="/books/1">show</a>
-   <a href="books/1/edit">Edit</a>
-   <a data-confirm="destroy_list_path(@book.id))>Destroy</a>
+     </td>
+     <td>
+     <a class="show_books/1" href="/books/1/">show</a>
+     </td>
+     <td><a class="edit_books/1/" href="/books/1/edit">Edit</a>
+     </td>
+     <td>
+     <a data-confirm="Are you sure?" class="destroy_list_path(@book.id)" rel="nofollow" data-method="delete" href="/books/1">Destroy</a>
+     </td>
+    </tr>
   </table>
    <span>
     <%= link_to book.title, book_path(book.id) %>

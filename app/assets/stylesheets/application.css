@@ -28,3 +28,7 @@ div.field, div.actions {
 div{
     display: block;
 }
+
+label{
+    display: block;
+}

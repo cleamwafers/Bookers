@@ -65,3 +65,9 @@ td {
 a:visited {
     color: #666;
 }
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}

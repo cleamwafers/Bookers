@@ -1,4 +1,14 @@
 <h2>New book</h2>
+<% if @book.errors.any? %>
+  <div id="error_explanation" >
+    <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <!-- form_with部分 -->
 <%= form_with model: @book, url: '/books', method: :post do  |f| %>
   <h4>Title</h4>

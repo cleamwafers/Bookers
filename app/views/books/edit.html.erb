@@ -14,8 +14,8 @@
   </div>
   <%= f.submit 'Update Book' %>
 </form>
-  <a href="/books/1">show</a>
+  <%= link_to "show",book_path(@book.id) %>
   |
-  <a href="/books">Back</a>
+  <%= link_to "Back",books_path %>
 </body>
 <% end %>

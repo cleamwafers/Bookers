@@ -28,8 +28,8 @@ protect_from_forgery
 
   def destroy
     @book = Book.find(params[:id])  # データ（レコード）を1件取得
-   if @output.destroy # データ（レコード）を削除
-    redirect_to root_path, notice: "アウトプットを削除しました"
+   if @book.destroy # データ（レコード）を削除
+    redirect_to books_path, notice: "Book was successfully destroyed."
    else
     flash.now[:danger] = "error"
    end
@@ -39,7 +39,7 @@ protect_from_forgery
     @book = Book.find(params[:id])
     # 編集ページの送信ボタンから飛んできたときのparamsに格納されたidを元に、該当する投稿データを探して、変数に代入する
     if @book.update(book_params)
-     redirect_to book_path(book.id), notice: "successfully"
+     redirect_to books_path(book.id.ed), notice: "Book was successfully updated."
     else
     flash.now[:danger] = "error"
      render 'index'

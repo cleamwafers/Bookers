@@ -34,14 +34,39 @@ label{
 }
 
 #error_explanation {
-    width: 450px;
-    border: 2px solid red;
-    padding: 7px;
+    text-align: left;
+    font-weight: bold;
+    pading: 5px 5px 5px 15px;
+    padfont-size: 12px;
     padding-bottom: 0;
-    margin-bottom: 20px;
+    margin-bottom: -7px;
     background-color: #c00;
     color: #fff;
 }
 #notice {
     color: green;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: square;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+.label_with_errors {
+    
+}
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: #c00;
+    color: #fff;
 }

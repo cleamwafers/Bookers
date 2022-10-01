@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html>
- <head>
-     <title>WebcampBackendNew</title>
-     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
- </head>
- <body>
   <p id="notice"><%= notice %></p>
   <h1>Books</h1>
 
-  <table>
+<table>
    <thead>
      <tr>
      <th>Title</th>
@@ -28,13 +15,13 @@
        <td><%= book.title %></td>
      <td><%= book.body %></td>
      <td>
-      <%= link_to "show",book_path(book.id),method:"get" %>
+      <%= link_to "show",book_path(book.id) %>
      </td>
      <td>
-      <%= link_to "edit",book_path(book.id) %>
+      <%= link_to "edit",edit_book_path(book.id) %>
      </td>
      <td>
-      <%= link_to "destroy",destroy_book_path(book.id),method: :"delete",data: { confirm: "Are you sure ?" } %>
+      <%= link_to "Destroy",destroy_book_path(book.id),method: :delete,data: { confirm: "Are you sure ?" } %>
       </td>
     </tr>
     <% end %>
@@ -62,5 +49,3 @@
 
       <%= f.submit 'create Book' %>
   <% end %>
- </body>
-</html>

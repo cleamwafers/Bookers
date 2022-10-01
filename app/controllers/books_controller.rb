@@ -18,6 +18,7 @@ protect_from_forgery
   def index
     @books = Book.all
     @book = Book.new
+
   end
 
   def show
@@ -30,11 +31,9 @@ protect_from_forgery
 
   def destroy
     @book = Book.find(params[:id])  # データ（レコード）を1件取得
-   if @book.destroy # データ（レコード）を削除
+    @book.destroy # データ（レコード）を削除
     redirect_to books_path, notice: "Book was successfully destroyed."
-   else
-    flash.now[:danger] = "error"
-   end
+  
   end
 
   def update
@@ -44,6 +43,7 @@ protect_from_forgery
      redirect_to book_path(@book.id), notice: "Book was successfully updated."
     else
      flash.now[:danger] = "error"
+     @books = Book.all
      render :index
    end
   end

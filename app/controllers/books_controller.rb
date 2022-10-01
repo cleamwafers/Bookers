@@ -33,7 +33,7 @@ protect_from_forgery
     @book = Book.find(params[:id])  # データ（レコード）を1件取得
     @book.destroy # データ（レコード）を削除
     redirect_to books_path, notice: "Book was successfully destroyed."
-  
+
   end
 
   def update
